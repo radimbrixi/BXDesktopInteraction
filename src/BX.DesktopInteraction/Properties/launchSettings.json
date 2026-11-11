@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "BX cursor preview": {
+      "commandName": "Project",
+      "commandLineArgs": "--demo"
+    },
+    "BX MCP stdio": {
+      "commandName": "Project"
+    }
+  }
+}

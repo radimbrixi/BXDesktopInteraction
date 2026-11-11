@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "bx-desktop-interaction": {
+      "command": "C:\\path\\to\\BXDesktopInteraction\\src\\BX.DesktopInteraction\\bin\\Release\\net10.0-windows\\BX.DesktopInteraction.exe",
+      "args": []
+    }
+  }
+}

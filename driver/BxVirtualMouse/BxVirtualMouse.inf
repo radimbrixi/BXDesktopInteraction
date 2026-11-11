@@ -1,0 +1,44 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=HIDClass
+ClassGuid={745A17A0-74D3-11D0-B6FE-00A0C90F57DA}
+Provider=%Provider%
+CatalogFile=BxVirtualMouse.cat
+DriverVer=10/23/2026,0.1.0.0
+PnpLockdown=1
+
+[DestinationDirs]
+DriverCopy=12
+[SourceDisksNames]
+1=%Disk%,,,
+[SourceDisksFiles]
+BxVirtualMouse.sys=1
+[Manufacturer]
+%Provider%=Models,NTamd64.10.0
+[Models.NTamd64.10.0]
+%Device%=Install,Root\BxVirtualMouse
+[Install.NT]
+CopyFiles=DriverCopy
+[DriverCopy]
+BxVirtualMouse.sys
+[Install.NT.HW]
+AddReg=Hardware
+[Hardware]
+HKR,,LowerFilters,0x00010000,"vhf"
+HKR,,Security,0x00000000,"D:P(A;;GA;;;SY)(A;;GA;;;BA)"
+[Install.NT.Services]
+AddService=BxVirtualMouse,0x00000002,Service
+[Service]
+DisplayName=%Device%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\BxVirtualMouse.sys
+[Install.NT.Wdf]
+KmdfService=BxVirtualMouse,Wdf
+[Wdf]
+KmdfLibraryVersion=$KMDFVERSION$
+[Strings]
+Provider="BX Desktop Interaction"
+Disk="BX Virtual Mouse installation media"
+Device="BX Virtual HID Mouse (development)"
